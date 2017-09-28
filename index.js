@@ -26,13 +26,12 @@ function mergeSort(array){
   return array.length < 2 ? array : merge(mergeSort(first), mergeSort(second))
 }
 
-var result =[]
-
 function binaryMatch(array, target){
   return array.includes(target)
 }
 
 function binarySearchTwoSum(array, target){
+  var result =[]
   let start = array.shift()
   for(let i=1; i<array.length-1; i++){
     if(target - start === array[i]) result.push([start, array[i]])
