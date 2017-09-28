@@ -30,8 +30,9 @@ function binaryMatch(array, target){
   return array.includes(target)
 }
 
+var result =[]
+
 function binarySearchTwoSum(array, target){
-  var result =[]
   let start = array.shift()
   for(let i=1; i<array.length-1; i++){
     if(target - start === array[i]) result.push([start, array[i]])
