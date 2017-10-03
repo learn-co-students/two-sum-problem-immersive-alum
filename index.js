@@ -26,32 +26,41 @@ function mergeSort(array){
   return array.length < 2 ? array : merge(mergeSort(first), mergeSort(second))
 }
 
-function binaryMatch(array, target){
-  return array.includes(target)
+function binaryMatch(array, n){
+  return array.includes(n)
 }
 
-var result =[]
-
 function binarySearchTwoSum(array, target){
-  let start = array.shift()
-  for(let i=1; i<array.length-1; i++){
-    if(target - start === array[i]) result.push([start, array[i]])
-  }
-  if (array.length > 1) {
-    binarySearchTwoSum(array, target)
+  let result = [], length = array.length, i
+  for(i=0; i<length; i++){
+    let dif = target-array[i]
+    if(binaryMatch(mergeSort(array), dif)) {
+      result.push([array[i],dif])
+      array.splice(i, 1)
+    }
   }
   return mergeSort(result)
 }
 
 function hashTwoSum(array, target){
-  var result = []
-  for(let i=0; i<array.length; i++){
-    let dif = target-array[i]
-    if(array.includes(dif)) {
-      result.push([array[i],dif])
-      array.splice(i, 1)
-    }
-    else console.log("none")
+  let result = [], hash = {}, length = array.length, i, diff
+  for (i=0; i<length; i++){
+    diff = target - array[i]
+    if(hash[diff]) result.push([diff, hash[diff]])
+    else hash[array[i]] = diff
   }
-  return mergeSort(result)
+  return result
 }
+
+// var result =[]
+//
+// function recursiveTwoSum(array, target){
+//   let start = array.shift()
+//   for(let i=1; i<array.length-1; i++){
+//     if(target - start === array[i]) result.push([start, array[i]])
+//   }
+//   if (array.length > 1) {
+//     binarySearchTwoSum(array, target)
+//   }
+//   return mergeSort(result)
+// }
