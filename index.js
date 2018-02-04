@@ -30,12 +30,21 @@ function binaryMatch(sortedArray, target) {
   return binarySearch(sortedArray, target) !== -1 ? true : false
 }
 
-function hashTwoSum() {
+function hashTwoSum(array, sum) {
+  let result = [];
+  let hash = {};
+  array.map((num, index) => {
+    if (index == 0 || hash[`${(sum - num)}`] === undefined) {
+      hash[`${num}`] = num;
+    } else {
+      result.push([sum - num, num]);
+    }
+  });
 
+  return result;
 }
 
 function mergeSort(a) {
-
   if (a.length === 1) {
     return a;
   }
