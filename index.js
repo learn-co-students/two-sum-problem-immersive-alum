@@ -92,7 +92,6 @@ function mergeSort(arr){
 function binarySearchTwoSum(array, sum){
   //merge sort
   let sortedArray = mergeSort(array);
-  console.log(sortedArray);
 
   let results = [];
 
