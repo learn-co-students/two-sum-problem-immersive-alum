@@ -9,7 +9,6 @@ describe('#bruteForceTwoSum', function() {
 describe('#binarySearchTwoSum', function() {
 	it("collects each pair of numbers with a matching sum", function() {
 		let array = [2, 3, 4, 3, 6, 7]
-		// let array = [2, 2, 3, 4, 3, 6, 7]
 		let sum = 6
 		expect(binarySearchTwoSum(array, sum)).toEqual([[2, 4], [3, 3]])
 	})
@@ -25,8 +24,7 @@ describe('#binaryMatch', function() {
 
 describe('#hashTwoSum', function() {
 	it("collects each pair of numbers with a matching sum", function() {
-		// let array = [2, 3, 4, 3, 6, 7]
-		let array = [2, 2, 3, 4, 3, 6, 7]
+		let array = [2, 3, 4, 3, 6, 7]
 		let sum = 6
 		expect(hashTwoSum(array, sum)).toEqual([[2, 4], [3, 3]])
 	})
